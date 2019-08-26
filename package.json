@@ -1,0 +1,16 @@
+{
+  "name": "tutorapp-backend",
+  "version": "1.0.0",
+  "description": "Proyecto final aplicativo para el curso de gerencia de proyectos",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jose Veliz",
+  "license": "MIT",
+  "dependencies": {
+    "knex": "^0.19.2",
+    "pg": "^7.12.1"
+  }
+}
