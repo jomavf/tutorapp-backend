@@ -4,27 +4,33 @@ exports.up = function(knex) {
         table.increments()
         table
             .integer('id_client')
-            .notNullable()
             .unsigned()
+            .notNullable()
+        table
+            .foreign('id_client')
             .references('id')
             .inTable('client')
             .onDelete('CASCADE')
         table
             .integer('id_tutor')
-            .notNullable()
             .unsigned()
+            .notNullable()
+        table
+            .foreign('id_tutor')
             .references('id')
             .inTable('tutor')
             .onDelete('CASCADE')
         table
             .integer('id_service')
-            .notNullable()
             .unsigned()
+            .notNullable()
+        table
+            .foreign('id_service')
             .references('id')
             .inTable('service')
             .onDelete('CASCADE')
         table.integer('price').notNullable()
-        table.timestamps()
+        table.timestamps(false, true)
     })
 };
 

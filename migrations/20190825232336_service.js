@@ -4,16 +4,19 @@ exports.up = function(knex) {
         table.increments()
         table
             .integer('id_tutor')
-            .notNullable()
             .unsigned()
+            .notNullable()
+        table
+            .foreign('id_tutor')
             .references('id')
             .inTable('tutor')
             .onDelete('CASCADE')
+            
         table.string('description',100).notNullable()
         table.string('name',20).notNullable()
         table.decimal('latitude').notNullable();
         table.decimal('longitude').notNullable();
-        table.timestamps()
+        table.timestamps(false,true)
     })
 };
 

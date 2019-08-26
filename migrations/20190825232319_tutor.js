@@ -4,12 +4,13 @@ exports.up = function(knex) {
         table.increments()
         table
             .integer('id_user')
-            .notNullable()
             .unsigned()
+            .notNullable()
+        table
+            .foreign('id_user')
             .references('id')
             .inTable('user')
             .onDelete('CASCADE')
-        table.timestamps()
     })
 };
 
